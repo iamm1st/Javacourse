@@ -1,4 +1,4 @@
-package exerc1;
+package lesson7.exerc1;
 
 public class Director implements Position {
 

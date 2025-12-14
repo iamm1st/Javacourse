@@ -1,4 +1,4 @@
-package exerc2;
+package lesson7.exerc2;
 
 class Triangle extends Figure {
     double a, b, c;

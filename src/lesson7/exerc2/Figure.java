@@ -1,4 +1,4 @@
-package exerc2;
+package lesson7.exerc2;
 
 abstract class Figure {
     abstract double getArea();

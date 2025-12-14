@@ -1,4 +1,4 @@
-package exerc2;
+package lesson7.exerc2;
 
 class Circle extends Figure {
     double radius;
