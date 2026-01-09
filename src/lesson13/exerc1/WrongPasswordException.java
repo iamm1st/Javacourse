@@ -1,4 +1,4 @@
-package exerc1;
+package lesson13.exerc1;
 
 public class WrongPasswordException extends Exception {
 
