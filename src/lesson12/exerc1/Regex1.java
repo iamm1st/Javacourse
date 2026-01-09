@@ -1,4 +1,4 @@
-package exerc1;
+package lesson12.exerc1;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
