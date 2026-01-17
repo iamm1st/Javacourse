@@ -3,10 +3,12 @@ import java.util.Scanner;
 
 public class star_exerc {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
         int n = scanner.nextInt();
         int m = scanner.nextInt();
+        scanner.close();
 
         int[][] a = new int[n][m];
 
@@ -36,6 +38,5 @@ public class star_exerc {
             }
             System.out.println();
         }
-        scanner.close();
     }
 }
