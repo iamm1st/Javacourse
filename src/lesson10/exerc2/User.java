@@ -17,8 +17,8 @@ public class User {
     }
 
     public User deepClone() {
-        Address newAddress = new Address(this.address);
-        return new User(this.id, this.name, newAddress);
+        new Address (this.address.id, this.address.city);
+        return null;
     }
 
     @Override
