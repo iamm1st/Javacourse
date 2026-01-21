@@ -22,7 +22,6 @@ public class Regex2 {
             break;
         }
 
-        // Паттерны (вариант преподавателя)
         Pattern emailPattern = Pattern.compile("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[a-zA-Z]{2,}\\b");
         Pattern docPattern = Pattern.compile("\\b\\d{4}-\\d{4}-\\d{2}\\b");
         Pattern phonePattern = Pattern.compile("\\b\\+\\(\\d{2}\\)\\d{7}\\b");
@@ -50,8 +49,7 @@ public class Regex2 {
             System.out.println("phone number: " + phoneMatcher.group());
             foundSomething = true;
         }
-
-        // Если вообще ничего не найдено
+        
         if (!foundSomething) {
             System.out.println("Совпадения не найдены.");
         }
