@@ -9,32 +9,52 @@ public class Regex2 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        String input;
 
-        System.out.println("\nВведите текст с email, номером документа и телефоном:");
-        String input = scanner.nextLine();
+        while (true) {
+            System.out.println("Введите текст с email, номером документа и телефоном:");
+            input = scanner.nextLine();
 
-        // email
-        Pattern emailPattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+");
+            if (input == null || input.trim().isEmpty()) {
+                System.out.println("Ошибка: строка пустая. Введите текст ещё раз.\n");
+                continue;
+            }
+            break;
+        }
+
+        // Паттерны (вариант преподавателя)
+        Pattern emailPattern = Pattern.compile("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[a-zA-Z]{2,}\\b");
+        Pattern docPattern = Pattern.compile("\\b\\d{4}-\\d{4}-\\d{2}\\b");
+        Pattern phonePattern = Pattern.compile("\\b\\+\\(\\d{2}\\)\\d{7}\\b");
+
         Matcher emailMatcher = emailPattern.matcher(input);
-
-        // номер документа xxxx-xxxx-xx
-        Pattern docPattern = Pattern.compile("\\d{4}-\\d{4}-\\d{2}");
         Matcher docMatcher = docPattern.matcher(input);
-
-        // телефон +(xx)xxxxxxx
-        Pattern phonePattern = Pattern.compile("\\+\\(\\d{2}\\)\\d{7}");
         Matcher phoneMatcher = phonePattern.matcher(input);
 
-        if (emailMatcher.find()) {
+        boolean foundSomething = false;
+
+        // Email
+        while (emailMatcher.find()) {
             System.out.println("email: " + emailMatcher.group());
+            foundSomething = true;
         }
 
-        if (docMatcher.find()) {
+        // Документ
+        while (docMatcher.find()) {
             System.out.println("document number: " + docMatcher.group());
+            foundSomething = true;
         }
 
-        if (phoneMatcher.find()) {
+        // Телефон
+        while (phoneMatcher.find()) {
             System.out.println("phone number: " + phoneMatcher.group());
+            foundSomething = true;
         }
+
+        // Если вообще ничего не найдено
+        if (!foundSomething) {
+            System.out.println("Совпадения не найдены.");
+        }
+        scanner.close();
     }
 }
